@@ -1,0 +1,218 @@
+<!doctype html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="t" href=""> -->
+    <meta charset="UTF-8">
+    <title>SITE DIMENSION</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+    <script src="script.js"></script>
+    <header>
+        <div class="logo">
+            <img src="" alt="Company Logo">
+        </div>
+        <nav class="navbar">
+            <ul class="menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="menu-toggle" id="menu-toggle">
+                ☰
+            </button>
+        </nav>
+    </header>
+    <form id="form" onsubmit="calculateResult(event)">
+        <h1>Construction Cost Calculator </h1>
+        <div class="site-dimension">
+            <label for="site-dimension" class="labels" >SITE<br>DIMENSION</label>
+            <select id="site-dimension" name="site-dimension">
+                <option value="20x30">20x30</option>
+                <option value="30x40">30x40</option>
+                <option value="40x60">40x60</option>
+                <option value="50x80">50x80</option>
+            </select> 
+        </div>
+
+        <div class="floors">
+            <label for="floors" class="labels" >FLOORS</label>
+            <select id="floors" name="floors">
+                <option value="GROUND FLOOR ONLY">GROUND FLOOR ONLY</option>
+                <option value="GROUND+1 FLOOR">GROUND+1 FLOOR (G+1)</option>
+                <option value="GROUND+2 FLOOR">GROUND+2 FLOOR (G+2)</option>
+                <option value="GROUND+3 FLOOR">GROUND+3 FLOOR (G+3)</option>
+                <option value="GROUND+4 FLOOR">GROUND+4 FLOOR (G+4)</option>
+            </select>
+        </div>
+        <div class="plan">
+            <label class="labels" >PLAN</label>
+            <input type="radio" id="btn-for-basic-plan" name="options-for-plan" value="1500" class="hidden-radio-plan">
+            <label for="btn-for-basic-plan" class="radio-button-plan">Basic</label>
+
+            <input type="radio" id="btn-for-premium-plan" name="options-for-plan" value="2500" class="hidden-radio-plan">
+            <label for="btn-for-premium-plan" class="radio-button-plan">Premium</label>
+
+            <div class="error-message" id="plan-error"></div>
+        </div>
+
+        <div class="house-type">
+            <label class="labels" >HOUSE TYPE</label>
+            <input type="radio" id="btn-for-duplex" name="options-for-ht" value="1.5" class="hidden-radio-ht" >
+            <label for="btn-for-duplex" class="radio-button-ht">Duplex House</label>
+
+            <input type="radio" id="btn-for-rental" name="options-for-ht" value="1.2" class="hidden-radio-ht">
+            <label for="btn-for-rental" class="radio-button-ht">Rental House</label>
+
+           <!---- <input type="radio" id="btn-for-duplex-and-rental" name="options-for-ht" value="1.8">
+            <label for="btn-for-duplex-and-rental">Duplex House + Rental House</label>-->
+        </div>
+        <div class="structure">
+            <label class="labels" >STRUCTURE</label>
+            <input type="radio" id="btn-for-cementblock-6" name="options-for-structure" value="1.1" class="hidden-radio-structure" onchange="showStructurePrices('btn-for-cementblock-6')">
+            <label for="btn-for-cementblock-6" class="radio-button-structure">Cement Blocks (6')</label>
+            <select id="btn-for-cementblock-6-prices" class="structure-price-dropdown" style="display:none;">
+                <option value="60">60</option>
+                <option value="70">70</option>
+                <option value="120">120</option>
+                <option value="150">150</option>
+            </select>
+
+            <input type="radio" id="btn-for-cementblock-8" name="options-for-structure" value="1.3" class="hidden-radio-structure" onchange="showStructurePrices('btn-for-cementblock-8')">
+            <label for="btn-for-cementblock-8" class="radio-button-structure">Cement Blocks (8')</label>
+            <select id="btn-for-cementblock-8-prices" class="structure-price-dropdown" style="display:none;">
+                <option value="60">60</option>
+                <option value="70">70</option>
+                <option value="120">120</option>
+                <option value="150">150</option>
+            </select>
+
+            <input type="radio" id="btn-for-bricks" name="options-for-structure" value="1.2" class="hidden-radio-structure" onchange="showStructurePrices('btn-for-bricks')">
+            <label for="btn-for-bricks" class="radio-button-structure">Bricks</label>
+            <select id="btn-for-bricks-prices" class="structure-price-dropdown" style="display:none;">
+                <option value="60">60</option>
+                <option value="70">70</option>
+                <option value="120">120</option>
+                <option value="150">150</option>
+            </select>
+        </div>
+
+        <div class="flooring">
+            <label class="labels" >FLOORING</label>
+            <input type="radio" id="btn-for-vitrified" name="options-for-flooring" value="1.2" onchange="showFlooringPrices('btn-for-vitrified')" class="hidden-radio-flooring">
+            <label for="btn-for-vitrified" class="radio-button-flooring">Vitrified</label>
+            <select id="btn-for-vitrified-prices" class="flooring-price-dropdown" style="display:none;">
+                <option value="60">60</option>
+                <option value="70">70</option>
+                <option value="120">120</option>
+                <option value="150">150</option>
+            </select>
+
+            <input type="radio" id="btn-for-granite" name="options-for-flooring" value="1.5" onchange="showFlooringPrices('btn-for-granite')" class="hidden-radio-flooring">
+            <label for="btn-for-granite" class="radio-button-flooring">Granite</label>
+            <select id="btn-for-granite-prices" class="flooring-price-dropdown" style="display:none;">
+                <option value="200">200</option>
+                <option value="250">250</option>
+                <option value="300">300</option>
+            </select>
+
+            <input type="radio" id="btn-for-marble-wooden" name="options-for-flooring" value="1.8" onchange="showFlooringPrices('btn-for-marble-wooden')" class="hidden-radio-flooring">
+            <label for="btn-for-marble-wooden" class="radio-button-flooring">Marble + Wooden</label>
+            <select id="btn-for-marble-wooden-prices" class="flooring-price-dropdown" style="display:none;">
+                <option value="400">400</option>
+                <option value="450">450</option>
+                <option value="500">500</option>
+            </select>
+        </div>
+
+        <div class="doors">
+            <label class="labels" >DOORS</label>
+            <input type="radio" id="btn-for-ost-doors" name="options-for-doors" value="1.1" onchange="showDoorPrices('btn-for-ost-doors')" class="hidden-radio-doors">
+                <label for="btn-for-ost-doors" class="radio-button-doors">OST Doors</label>
+                <select id="btn-for-ost-doors-prices" class="door-price-dropdown" style="display:none;">
+                    <option value="1000">1000</option>
+                    <option value="1200">1200</option>
+                    <option value="1500">1500</option>
+                </select>
+
+                <input type="radio" id="btn-for-salwood" name="options-for-doors" value="1.4" onchange="showDoorPrices('btn-for-salwood')" class="hidden-radio-doors">
+                <label for="btn-for-salwood" class="radio-button-doors">Salwood</label>
+                <select id="btn-for-salwood-prices" class="door-price-dropdown" style="display:none;">
+                    <option value="1500">1500</option>
+                    <option value="1800">1800</option>
+                    <option value="2200">2200</option>
+                </select>
+
+                <input type="radio" id="btn-for-hoonewood" name="options-for-doors" value="1.6" onchange="showDoorPrices('btn-for-hoonewood')" class="hidden-radio-doors">
+                <label for="btn-for-hoonewood" class="radio-button-doors">Hoonewood</label>
+                <select id="btn-for-hoonewood-prices" class="door-price-dropdown" style="display:none;">
+                    <option value="2000">2000</option>
+                    <option value="2500">2500</option>
+                    <option value="3000">3000</option>
+                </select>
+        </div>
+        
+        <div class="windows">
+            <label class="labels" >WINDOWS</label>
+            <input type="radio" id="btn-for-window-salwood" name="options-for-windows" value="1.2" onchange="showWindowPrices('btn-for-window-salwood')" class="hidden-radio-windows">
+            <label for="btn-for-window-salwood" class="radio-button-windows">Salwood</label>
+            <select id="btn-for-window-salwood-prices" class="window-price-dropdown" style="display:none;">
+                <option value="800">800</option>
+                <option value="1000">1000</option>
+                <option value="1200">1200</option>
+            </select>
+
+            <input type="radio" id="btn-for-window-hoonewood" name="options-for-windows" value="1.5" onchange="showWindowPrices('btn-for-window-hoonewood')" class="hidden-radio-windows">
+            <label for="btn-for-window-hoonewood" class="radio-button-windows">Hoonewood</label>
+            <select id="btn-for-window-hoonewood-prices" class="window-price-dropdown" style="display:none;">
+                <option value="1200">1200</option>
+                <option value="1500">1500</option>
+                <option value="2000">2000</option>
+            </select>
+
+            <input type="radio" id="btn-for-window-upvc" name="options-for-windows" value="1.8" onchange="showWindowPrices('btn-for-window-upvc')" class="hidden-radio-windows">
+            <label for="btn-for-window-upvc" class="radio-button-windows">UPVC</label>
+            <select id="btn-for-window-upvc-prices" class="window-price-dropdown" style="display:none;">
+                <option value="1800">1800</option>
+                <option value="2200">2200</option>
+                <option value="2500">2500</option>
+            </select>
+
+            <input type="radio" id="btn-for-window-aluminum" name="options-for-windows" value="1.6" onchange="showWindowPrices('btn-for-window-aluminum')" class="hidden-radio-windows">
+            <label for="btn-for-window-aluminum" class="radio-button-windows">Aluminum</label>
+            <select id="btn-for-window-aluminum-prices" class="window-price-dropdown" style="display:none;">
+                <option value="1600">1600</option>
+                <option value="1800">1800</option>
+                <option value="2000">2000</option>
+            </select>
+        </div>
+        
+
+        
+        <div class="painting">
+            <label class="labels" >PAINTING</label>
+            <input type="radio" id="btn-for-basic-painting" name="options-for-painting" value="1500" class="hidden-radio-painting">
+            <label for="btn-for-basic-painting" class="radio-button-painting">Basic</label>
+            <input type="radio" id="btn-for-premium-painting" name="options-for-painting" value="2500" class="hidden-radio-painting">
+            <label for="btn-for-premium-painting" class="radio-button-painting">Premium</label>
+        </div>
+
+        <input type="submit" value="Calculate">
+        <input type="reset" value="Reset">
+        <div id="result" style="font-size: 1.5em; font-weight: bold; margin-top: 20px;"></div>
+
+        <!-- Container for Detailed Report -->
+        <div id="report-container" ></div>
+
+        <!-- Container for Summary Table style="margin-top: 20px; padding: 10px;  border-bottom: 5px;" -->
+        <div id="table-container" ></div>
+
+        <canvas id="myPieChart" width="700" height="700"></canvas>
+
+
+    </form>
+</body>
+</html>

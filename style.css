@@ -1,0 +1,535 @@
+
+*{
+	font-size: 18px;
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+header{
+	box-sizing: border-box;
+	position: relative;
+	margin: 0 auto 0;
+	padding-top: 0px;
+}
+body 
+{
+ background-color: #ffffeb;
+ box-sizing: border-box;
+}
+@media (max-width: 800px)
+{
+	.formy{
+		padding: 10px 10px;
+	background-color: #ffffff;
+	border: 1px solid black;
+	border-radius: 25px;   
+	position: relative;
+	top:110px;
+	box-shadow: 5px 5px rgb(202, 202, 202);
+    margin-right: 10%;
+	margin-left: 10%;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	}
+}
+h1 {
+
+	font-size: 30px;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	margin-bottom: 40px;
+
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.logo img {
+    width: 120px;
+    height: auto;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.menu li a:hover {
+    color: #f0a500;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    background: none;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        background-color: #444;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 150px;
+        border-radius: 5px;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .menu li {
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+form {
+	padding: 10px 10px;
+	background-color: #ffffff;
+	border: 1px solid black;
+	border-radius: 25px;   
+	position: relative;
+	top:110px;
+	box-shadow: 5px 5px rgb(202, 202, 202);
+   margin-right: 40%;
+	margin-left: 10%;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+/* style code for all select */
+select 
+{
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 2px solid #1feb1f;
+    border-radius: 50px;
+    width: auto;
+    transition: border-color 20s;
+	}
+	/*submit and reset  button style*/
+input[type="submit"]
+{
+	
+    background-color: #008cba;
+    color: rgb(255, 255, 255);
+
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    font-display: bold;
+	position: relative;
+	left: 30%;
+}
+input[type="reset"]  {
+    background-color:#ff5757;
+    color: rgb(255, 255, 255); 
+
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    font-display: bold;
+	position: relative;
+	left: 32%;
+
+}
+/*hover for both*/
+input[type="submit"]:hover {
+    background-color: #ffd15e;
+}
+
+input[type="reset"]:hover {
+    background-color:  #ffd15e;
+}
+/*style for site demension*/
+.site-dimension 
+	{
+		 margin: 1px 0; 
+		 font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	 } 
+.site-dimension label 
+	{
+		font-weight: bold;
+		padding-right: 10px;
+		display: inline-block;
+		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	 }
+.site-dimension select
+	 { 
+		width: auto;
+		font-weight: bold;
+		padding: 10px;
+		 border: 3px solid #d2c5c5;
+		 background-color: white; 
+		border-radius: 25px; 
+	  	font-size: 15px;  
+		cursor: pointer;
+		position: relative;
+		left: 30px;
+		margin-bottom: 20px;
+		font-family: 'Source Sans Pro Topnav', sans-serif;
+		
+	}
+	/*style for site floors*/
+.floors 
+	{
+		 margin: 1px 0; 
+		font-family: 'Source Sans Pro Topnav', sans-serif;
+	 } 
+.floors label 
+	{
+		font-weight: bold;
+		display: inline-block;
+		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	 }
+.floors select
+	 { 
+		width: auto;
+		font-weight: bold;
+		display: inline;
+		cursor: pointer;
+		border: 3px solid #d2c5c5;
+		 background-color: white; 
+		border-radius: 50px; 
+	  	font-size: 16px; 
+		margin-bottom: 20px;
+		position: relative;
+		left: 65px;
+		
+	}
+	/*style code for radio button used as custom button for house type button*/
+.house-type
+	{ 
+		margin: 1px 0; 
+		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+		display: table;
+		font-weight: bold;
+	}  
+	.button-group-ht {
+		gap: 1px;
+	}
+	
+	.hidden-radio-ht {
+		display: none;
+	}
+	
+	.radio-button-ht {
+		padding: 5px 10px;
+		border: 3px solid #ddd;
+		border-radius: 50px;
+		margin-left: 10px;
+		background-color: #ffffff;
+		cursor: pointer;
+		transition: background-color 0.3s, border-color 0.3s;
+		display: inline-block;
+		margin-bottom: 20px;
+		position: relative;
+		left: 19px;
+	}
+	
+	.hidden-radio-ht:checked + .radio-button-ht {
+		background-color: #4fff93;
+		color: #000000;
+		border: 2px solid #000000;
+	}
+	
+	.radio-button-ht:hover {
+		background-color: #9effe2;
+	}
+	/*style code for radio button used as custom button for structure buttons*/
+	.structure
+	{ 
+		font-family: 'Source Sans Pro Topnav', sans-serif;
+		font-weight: bold;
+		display: table;
+	} 
+	.hidden-radio-structure {
+		display: none;
+	}
+	
+	.radio-button-structure {
+		padding: 5px 5px;
+		border: 3px solid #ddd;
+		border-radius: 25px;
+		background-color: #ffffff;
+		cursor: pointer;
+		margin-left: 10px;
+		transition: background-color 0.3s, border-color 0.3s;
+		display: inline-table;
+		margin-bottom: 20px;
+		margin-top: 5px;
+		position: relative;
+		left: 22px;
+	}
+	.structure-price-dropdown
+	{
+		position: relative;
+		left: 25px;
+	}
+	
+	.hidden-radio-structure:checked + .radio-button-structure {
+		background-color: #4fff93;
+		color: #000000;
+		border: 1px solid #000000;
+	}
+	
+	.radio-button-structure:hover {
+		background-color: #9effe2;
+	}
+	/*style code for radio button used as custom button for flooring buttons*/
+ 
+	.flooring {
+		font-family: Arial, sans-serif;
+		font-weight: bold;
+		display: table;
+		}
+	
+	.hidden-radio-flooring {
+		display: none;
+	}
+	
+	.radio-button-flooring {
+		padding: 5px 5px;
+		border: 3px solid #ddd;
+		border-radius: 25px;
+		background-color: #ffffff;
+		cursor: pointer;
+		transition: background-color 0.3s, border-color 0.3s;
+		display:inline-table;
+		margin-bottom: 20px;
+		margin-left: 10px;
+		margin-top: 5px;
+		position: relative;
+		left: 39px;
+	}
+	.flooring-price-dropdown/*style for dropdown*/
+	{
+		position: relative;
+		left: 40px;
+	}
+	
+	.hidden-radio-flooring:checked + .radio-button-flooring {
+		background-color: #4fff93;
+		color: #000000;
+		border: 1px solid #000000;
+	}
+	
+	.radio-button-flooring:hover {
+		background-color: #9effe2;
+	}
+	/*style code for radio button used as custom button for doors buttons*/
+
+	.doors
+	{ 
+		font-family: Arial, sans-serif;
+		font-weight: bold;
+		display: table;
+	}
+	.hidden-radio-doors {
+		display: none;
+	}
+	
+	.radio-button-doors {
+		padding: 5px 5px;
+		border: 3px solid #ddd;
+		border-radius: 25px;
+		background-color: #ffffff;
+		cursor: pointer;
+		transition: background-color 0.3s, border-color 0.3s;
+		display:inline-table;
+		margin-bottom: 20px;
+		margin-left: 10px;
+		margin-top: 5px;
+		position: relative;
+		left: 75px;
+	}
+	
+	.hidden-radio-doors:checked + .radio-button-doors {
+		background-color: #4fff93;
+		color: #000000;
+		border: 1px solid #000000;
+	}
+	.door-price-dropdown
+	{
+		position: relative;
+		left: 75px;	
+	}
+	.radio-button-doors:hover {
+		background-color: #9effe2;
+	}
+	/*style code for radio button used as custom button for windows buttons*/
+	.windows
+	{ 
+		font-family: Arial, sans-serif;
+		font-weight: bold;
+		display: table;
+	}  
+
+	.hidden-radio-windows {
+		display: none;
+	}
+	
+	.radio-button-windows{
+		padding: 5px 5px;
+		border: 3px solid #ddd;
+		border-radius: 25px;
+		background-color: #ffffff;
+		cursor: pointer;
+		transition: background-color 0.3s, border-color 0.3s;
+		display:inline-table;
+		margin-bottom: 20px;
+		margin-left: 10px;
+		margin-top: 5px;
+		position: relative;
+		left: 35px;
+	}
+	.window-price-dropdown
+	{
+		position: relative;
+		left: 35px;	
+		gap: 10px;
+	}
+	.hidden-radio-windows:checked + .radio-button-windows {
+		background-color: #4fff93;
+		color: #000000;
+		border: 1px solid #000000;
+	}
+	
+	.radio-button-windows:hover {
+		background-color: #9effe2;
+	}
+
+	/*style code for radio button used as custom button for painting buttons*/
+	.plan {
+		
+		font-family: Arial, sans-serif;
+		font-weight: bold;
+		display: table;
+
+		}
+	
+	.hidden-radio-plan {
+		display: none;
+	}
+	
+	.radio-button-plan {
+		padding: 5px 5px;
+		border: 3px solid #ddd;
+		border-radius: 25px;
+		background-color: #ffffff;
+		cursor: pointer;
+		transition: background-color 0.3s, border-color 0.3s;
+		display:inline-table;
+		margin-bottom: 20px;
+		margin-left: 10px;
+		margin-top: 5px;
+		position: relative;
+		left: 39%;
+	}
+	
+	.hidden-radio-plan:checked + .radio-button-plan {
+		background-color: #4fff93;
+		color: #000000;
+		border: 1px solid #000000;
+	}
+	
+	.radio-button-plan:hover {
+		background-color: #9effe2;
+	}
+	.painting {
+		
+		font-family: Arial, sans-serif;
+		font-weight: bold;
+		display: table;
+
+		}
+	
+	.hidden-radio-painting {
+		display: none;
+	}
+	
+	.radio-button-painting {
+		padding: 5px 5px;
+		border: 3px solid #ddd;
+		border-radius: 25px;
+		background-color: #ffffff;
+		cursor: pointer;
+		transition: background-color 0.3s, border-color 0.3s;
+		display:inline-table;
+		margin-bottom: 20px;
+		margin-left: 10px;
+		margin-top: 5px;
+		position: relative;
+		left: 18%;
+	}
+	
+	.hidden-radio-painting:checked + .radio-button-painting {
+		background-color: #4fff93;
+		color: #000000;
+		border: 1px solid #000000;
+	}
+	
+	.radio-button-painting:hover {
+		background-color: #9effe2;
+	}
+	#report-container
+	{
+		margin-top: 15px;
+		padding: 25px;
+		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+		font-size: 20px;
+		border: 2px solid black;
+		border-radius: 10px;
+	}
+	.table th
+	{
+		margin: 50px;
+		padding: 18px;
+		width: 50%;
+  		text-align: left;
+  		border-bottom: 2px solid #0b0a0a;
+		font-size: 20px;
+	}
+	.table td
+	{
+		margin: 50px;
+		padding: 18px;
+		width: 50%;
+  		text-align: left;
+  		border-bottom: 2px solid #0b0a0a;
+		font-size: 20px;
+	}
